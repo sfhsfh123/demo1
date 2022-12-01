@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询数据库user数据</title>
+
+</head>
+<body>
+    <div id="app">
+        <table border="1px">
+            <tr>
+                <td>id</td>
+                <td>用户名</td>
+                <td>密码</td>
+                <td>性别</td>
+                <td>年龄</td>
+            </tr>
+            <tr v-for="user in userList">
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.sex}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </table>
+        <input type="button" value="查询所有" @click="findAll">
+        <input type="button" value="查询单个用户" @click="findById(1)">
+    </div>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 官网提供的 axios 在线地址 -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/user.js"></script>
+</body>
+</html>
